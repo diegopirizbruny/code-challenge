@@ -1,0 +1,10 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+POST  /rest/v1/wallet                        controllers.Wallet.createWallet(rquest: Request)
+POST  /rest/v1/wallet/:player/credit         controllers.Wallet.addCredit(rquest: Request, player: models.Player)
+POST  /rest/v1/wallet/:player/debit          controllers.Wallet.addDebit(rquest: Request, player: models.Player)
+GET   /rest/v1/wallet/:player/balance        controllers.Wallet.getBalance(player: models.Player)
+GET   /rest/v1/wallet/:player/history        controllers.Wallet.getHistory(player: models.Player)
+

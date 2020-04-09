@@ -1,0 +1,6 @@
+/code-challenge.sqlite
+/target/
+/project/target/
+/logs/
+/.idea/
+.DS_Store

@@ -1,0 +1,27 @@
+players:
+  - !!models.Player
+    id: "Player 1"
+    balance: 100
+    transactions:
+      - !!models.Transaction
+        id: "Transaction 1"
+        player: !!models.Player
+          id: "Player 1"
+        type: "CREDIT"
+        amount: 200
+      - !!models.Transaction
+        id: "Transaction 2"
+        player: !!models.Player
+          id: "Player 1"
+        type: "DEBIT"
+        amount: 100
+  - !!models.Player
+    id: "Player 2"
+    balance: 30
+    transactions:
+      - !!models.Transaction
+        id: "Transaction 3"
+        player: !!models.Player
+          id: "Player 2"
+        type: "CREDIT"
+        amount: 30
