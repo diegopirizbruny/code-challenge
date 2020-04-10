@@ -16,12 +16,17 @@ create table transactions (
   amount                        decimal(38),
   when_created                  timestamp not null,
   constraint ck_transactions_type check ( type in ('CREDIT','DEBIT')),
-  constraint pk_transactions primary key (id),
-  foreign key (player_id) references players (id) on delete restrict on update restrict
+  constraint pk_transactions primary key (id)
 );
+
+create index ix_transactions_player_id on transactions (player_id);
+alter table transactions add constraint fk_transactions_player_id foreign key (player_id) references players (id) on delete restrict on update restrict;
 
 
 # --- !Downs
+
+alter table transactions drop constraint if exists fk_transactions_player_id;
+drop index if exists ix_transactions_player_id;
 
 drop table if exists players;
 
